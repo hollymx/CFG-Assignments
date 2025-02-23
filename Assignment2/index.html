@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticketing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="cinematicket-form">
+        <h1>Welcome to Cinema Booking</h1>
+
+        <div class="cinema-options">
+            <label for="movie"> Select movie:</label>
+            <select id="movie">
+                <option value="Horror">Horror Movie (£8)</option>
+                <option value="Romance">Romance Movie (£8)</option>
+                <option value="Action">Action Movie (£8)</option>
+                <option value="Thriller">Thriller Movie (£8)</option>
+            </select>
+
+            <label for="upgrade"> Select seat upgrade:</label>
+            <select id="upgrade">
+                <option value="Standard">Standard (included)</option>
+                <option value="Recliner">Recliner (+£2)</option>
+                <option value="Premium">Premium seats (+£4)</option>
+            </select>
+
+            <label for="snacks"> Select snacks and drinks (hold ctrl to select multiple):</label>
+            <select id="snacks" multiple>
+                <option value="Popcorn">Popcorn (£4)</option>
+                <option value="Coke">Coke (£3)</option>
+                <option value="Sweets">Sweets (£3)</option>
+                <option value="Peanuts">Peanuts (£2)</option>
+            </select>
+
+            <button id="select-seat" onclick="selectOptions()">Confirm my movie and seat choice
+            </button>
+
+            <h2>Order Summary</h2>
+            <div id="order-summary">
+                <p id="order-details"></p>
+                <p>Movie:<span id="movie-price">£0.00</span></p>
+                <p>Upgrade:<span id="upgrade-price">£0.00</span></p>
+                <p id="deal">Deal:<span id="deal-price">£0.00</span></p>
+                <p>Total:<span id="total-price">£0.00</span></p>
+            </div>
+
+            <button id="submit-booking">Complete my booking
+            </button>
+
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+<!-- pop up form -->
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Deal!</h1>
+      <h2>Would you like to add popcorn and a coke for only £5? That's a £2 saving!</h2>
+      <button type="button" class="btn" onclick="addDeal()">Yes please!</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">No, I don't like to save money.</button>
+    </form>
+  </div>
